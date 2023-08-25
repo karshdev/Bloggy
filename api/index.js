@@ -14,7 +14,11 @@ app.use(cors())
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-
+aa.use(cors({
+  origin:["https://deploy-mern-1whq.vercel.app"],
+  methods:["POST","GET"],
+  credentials:true
+}))
 mongoose
   .connect("mongodb+srv://sharmaaakarsh120:Hellobitch123@cluster0.blseeae.mongodb.net/",{
     useNewUrlParser: true,
